@@ -1,0 +1,16 @@
+<div class="bg-light border-right" id="sidebar-wrapper">
+  <div class="d-flex" id="wrapper">
+    <div class="sidebar bg-dark">
+      <a class="active" href="/admin" style="text-align: center;">
+        <fa-icon [icon]="home" style="position: relative; right: 0.3cm;"></fa-icon>
+        <b>HOME</b>
+        </a>
+        <a routerLink="allOrders">Orders</a>
+    </div>
+  </div>
+</div>
+<div id="page-content-wrapper">
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</div>

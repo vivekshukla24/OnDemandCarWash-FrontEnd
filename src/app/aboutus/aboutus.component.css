@@ -1,0 +1,38 @@
+.banner-img{
+    background-image: url('https://raw.githubusercontent.com/vivekshukla24/assestsODCW/main/banner-img.jpg');
+    height: 500px;
+    background-attachment: fixed;
+    background-position: center bottom;
+    background-size: cover;
+    opacity: 0.78;
+}
+
+.container-fluid {
+    padding: 25px 25px;
+}
+
+h2{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 2px;
+    color: black;
+    text-align: center;
+}
+h5{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: medium;
+    color: black;
+    text-align:center;
+}
+
+.section2{
+    background-color:rgba(128, 128, 128, 0.062);
+}
+
+.section2 .col-sm-4{
+    padding: 10px;
+}
+
+.section2 fa-icon{
+    font-size: 2em;
+    
+}

@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  BASE_URL_USER: 'http://localhost:8083/users'
+  BASE_URL_USER: 'http://localhost:8083/users',
+  BASE_URL_ORDER:'http://localhost:8082/orders'
 };
 
 /*

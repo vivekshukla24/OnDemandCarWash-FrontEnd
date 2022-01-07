@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UserRestComponent } from './user-rest.component';
+import { AdminPendingOrdersComponent } from './admin-pending-orders.component';
 
-describe('UserRestComponent', () => {
-  let component: UserRestComponent;
-  let fixture: ComponentFixture<UserRestComponent>;
+describe('AdminPendingOrdersComponent', () => {
+  let component: AdminPendingOrdersComponent;
+  let fixture: ComponentFixture<AdminPendingOrdersComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UserRestComponent ]
+      declarations: [ AdminPendingOrdersComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UserRestComponent);
+    fixture = TestBed.createComponent(AdminPendingOrdersComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
