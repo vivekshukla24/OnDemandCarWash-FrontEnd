@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { OrderService } from 'src/app/services/order.service';
 import { Order } from 'src/app/models/Order';
-import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 @Component({
-  selector: 'app-admin-pending-orders',
-  templateUrl: './admin-pending-orders.component.html',
-  styleUrls: ['./admin-pending-orders.component.css'],
+  selector: 'app-pending-orders',
+  templateUrl: './pending-orders.component.html',
+  styleUrls: ['./pending-orders.component.css'],
 })
-export class AdminPendingOrdersComponent implements OnInit {
+export class PendingOrdersComponent implements OnInit {
   OrderList: Array<Order> = [];
-  constructor(private os: OrderService, private router: Router) {}
+  constructor(private os: OrderService, private location: Location) {}
   ngOnInit(): void {
     this.pendingOrders();
   }
@@ -18,7 +18,7 @@ export class AdminPendingOrdersComponent implements OnInit {
       this.OrderList = data;
     });
   }
-  all() {
-    this.router.navigateByUrl('admin/allOrders');
+  back(){
+    this.location.back();
   }
 }

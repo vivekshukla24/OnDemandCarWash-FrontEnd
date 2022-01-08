@@ -8,8 +8,6 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AdminDashboardComponent } from './Admin/admin-dashboard/admin-dashboard.component';
-import { AdminCompletedOrdersComponent } from './Admin/admin-completed-orders/admin-completed-orders.component';
-import { AdminPendingOrdersComponent } from './Admin/admin-pending-orders/admin-pending-orders.component';
 import { AllOrdersComponent } from './OrderAux/all-orders/all-orders.component';
 import { UserDashboardComponent } from './User/user-dashboard/user-dashboard.component';
 import { WasherDashboardComponent } from './Washer/washer-dashboard/washer-dashboard.component';
@@ -19,6 +17,8 @@ import { FormsModule } from '@angular/forms';
 import { UpdateOrderComponent } from './OrderAux/update-order/update-order.component';
 import { UnassignedOrdersComponent } from './OrderAux/unassigned-orders/unassigned-orders.component';
 import { CancelledOrdersComponent } from './OrderAux/cancelled-orders/cancelled-orders.component';
+import { PendingOrdersComponent } from './OrderAux/pending-orders/pending-orders.component';
+import { CompletedOrdersComponent } from './OrderAux/completed-orders/completed-orders.component';
 
 @NgModule({
   declarations: [
@@ -28,8 +28,6 @@ import { CancelledOrdersComponent } from './OrderAux/cancelled-orders/cancelled-
     AboutusComponent,
     NavbarComponent,
     AdminDashboardComponent,
-    AdminCompletedOrdersComponent,
-    AdminPendingOrdersComponent,
     AllOrdersComponent,
     UserDashboardComponent,
     WasherDashboardComponent,
@@ -37,6 +35,8 @@ import { CancelledOrdersComponent } from './OrderAux/cancelled-orders/cancelled-
     UpdateOrderComponent,
     UnassignedOrdersComponent,
     CancelledOrdersComponent,
+    PendingOrdersComponent,
+    CompletedOrdersComponent,
   ],
   imports: [
     BrowserModule,

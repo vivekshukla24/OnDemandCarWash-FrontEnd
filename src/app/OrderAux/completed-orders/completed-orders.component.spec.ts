@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AdminPendingOrdersComponent } from './admin-pending-orders.component';
+import { CompletedOrdersComponent } from './completed-orders.component';
 
-describe('AdminPendingOrdersComponent', () => {
-  let component: AdminPendingOrdersComponent;
-  let fixture: ComponentFixture<AdminPendingOrdersComponent>;
+describe('CompletedOrdersComponent', () => {
+  let component: CompletedOrdersComponent;
+  let fixture: ComponentFixture<CompletedOrdersComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AdminPendingOrdersComponent ]
+      declarations: [ CompletedOrdersComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AdminPendingOrdersComponent);
+    fixture = TestBed.createComponent(CompletedOrdersComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

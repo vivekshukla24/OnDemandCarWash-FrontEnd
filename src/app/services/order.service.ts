@@ -30,10 +30,10 @@ export class OrderService {
   addOrder(order: Order): Observable<Object>{
     return this.http.post(API_URL2 + '/add',order);
   }
-  deleteOrder(orderId: number): Observable<any>{
-    return this.http.delete(`${API_URL2}/delete/${orderId}`);
+  deleteOrder(orderId: string): Observable<any>{
+    return this.http.delete(API_URL2+'/delete/'+orderId);
   }
   getOneOrder(orderId:number): Observable<Object>{
-    return this.http.get(`${API_URL2}/findone/${orderId}`);
+    return this.http.get(API_URL2+'/findone/'+ orderId);
   }
 }
