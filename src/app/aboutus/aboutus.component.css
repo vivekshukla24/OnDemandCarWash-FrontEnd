@@ -1,6 +1,6 @@
 .banner-img{
     background-image: url('https://raw.githubusercontent.com/vivekshukla24/assestsODCW/main/banner-img.jpg');
-    height: 500px;
+    height: 400px;
     background-attachment: fixed;
     background-position: center bottom;
     background-size: cover;
@@ -23,8 +23,6 @@ h5{
     color: black;
     text-align:center;
 }
-
-
 
 .section2 .col-sm-4{
     padding: 10px;

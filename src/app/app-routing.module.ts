@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Router, RouterModule, Routes } from '@angular/router';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { AddOrderComponent } from './OrderAux/add-order/add-order.component';
 import { AdminDashboardComponent } from './Admin/admin-dashboard/admin-dashboard.component';
@@ -14,12 +14,20 @@ import { CompletedOrdersComponent } from './OrderAux/completed-orders/completed-
 import { HomeComponent } from './home/home.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
+import { NotAuthComponent } from './not-auth/not-auth.component';
+import { AuthGuardService } from './authGuard/auth-guard.service';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/user', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'login', component: LoginComponent },
   {
     path: 'admin',
     component: AdminDashboardComponent,
+    canActivate: [AuthGuardService],
+    data: { roles: ['ADMIN'] },
     children: [
       { path: 'completed', component: CompletedOrdersComponent },
       { path: 'pending', component: PendingOrdersComponent },
@@ -29,39 +37,43 @@ const routes: Routes = [
       { path: 'addOrder', component: AddOrderComponent },
     ],
   },
-
   {
     path: 'user',
     component: UserDashboardComponent,
+    canActivate: [AuthGuardService],
+    data: { roles: ['USER'] },
     children: [{ path: 'addOrder', component: AddOrderComponent }],
   },
-  { path: 'aboutus', component: AboutusComponent },
   {
     path: 'washer',
     component: WasherDashboardComponent,
+    canActivate: [AuthGuardService],
+    data: { roles: ['WASHER'] },
     children: [
-      { path: 'completed', component: CompletedOrdersComponent },
       { path: 'pending', component: PendingOrdersComponent },
       { path: 'unassigned', component: UnassignedOrdersComponent },
-      { path: 'cancelled', component: CancelledOrdersComponent },
-      { path: 'allOrders', component: AllOrdersComponent },
-      { path: 'aboutus', component: AboutusComponent },
     ],
   },
-  { path: 'register', component: RegisterComponent},
   { path: 'allOrders', component: AllOrdersComponent },
   { path: 'addOrder', component: AddOrderComponent },
-  { path: 'home', component: HomeComponent },
-  { path:'contact', component: ContactusComponent},
+  { path: 'aboutus', component: AboutusComponent },
+  { path: 'contact', component: ContactusComponent },
+  { path: 'badcred', component: NotAuthComponent },
   { path: '**', component: PageNotFoundComponent },
-  
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule {
+  constructor(private router: Router) {
+    this.router.errorHandler = (error: any) => {
+      console.log(error);
+      this.router.navigate(['/404']);
+    };
+  }
+}
 export const routingComponents = [
   UserDashboardComponent,
   WasherDashboardComponent,
