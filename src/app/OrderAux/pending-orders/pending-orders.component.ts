@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { OrderService } from 'src/app/services/order.service';
 import { Order } from 'src/app/models/Order';
 import { Location } from '@angular/common';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-pending-orders',
   templateUrl: './pending-orders.component.html',
@@ -18,7 +19,15 @@ export class PendingOrdersComponent implements OnInit {
       this.OrderList = data;
     });
   }
-  back(){
+  back() {
     this.location.back();
+  }
+
+  updateCompleteOrder(orderId : string) {
+    this.os.updatecompleteOrder(orderId).subscribe((data)=>{
+      console.log(data);
+      Swal.fire("Order is Complete")
+      this.pendingOrders();
+    });
   }
 }

@@ -19,6 +19,12 @@ import { UnassignedOrdersComponent } from './OrderAux/unassigned-orders/unassign
 import { CancelledOrdersComponent } from './OrderAux/cancelled-orders/cancelled-orders.component';
 import { PendingOrdersComponent } from './OrderAux/pending-orders/pending-orders.component';
 import { CompletedOrdersComponent } from './OrderAux/completed-orders/completed-orders.component';
+import { AdminSidebarComponent } from './Admin/admin-sidebar/admin-sidebar.component';
+import { HomeComponent } from './home/home.component';
+import { ContactusComponent } from './contactus/contactus.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 
 @NgModule({
   declarations: [
@@ -37,6 +43,11 @@ import { CompletedOrdersComponent } from './OrderAux/completed-orders/completed-
     CancelledOrdersComponent,
     PendingOrdersComponent,
     CompletedOrdersComponent,
+    AdminSidebarComponent,
+    HomeComponent,
+    ContactusComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,10 +55,10 @@ import { CompletedOrdersComponent } from './OrderAux/completed-orders/completed-
     HttpClientModule,
     FontAwesomeModule,
     AngularMaterialModule,
-    FormsModule
-    
+    FormsModule,
+    BrowserAnimationsModule,
   ],
-  
+
   providers: [],
   bootstrap: [AppComponent],
 })

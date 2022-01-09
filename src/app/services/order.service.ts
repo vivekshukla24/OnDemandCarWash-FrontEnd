@@ -28,7 +28,7 @@ export class OrderService {
     return this.http.get<Order[]>(API_URL2 + '/findCancelled');
   }
   addOrder(order: Order): Observable<Object>{
-    return this.http.post(API_URL2 + '/add',order);
+    return this.http.post(API_URL2 +'/add', order);
   }
   deleteOrder(orderId: string): Observable<any>{
     return this.http.delete(API_URL2+'/delete/'+orderId);
@@ -36,4 +36,8 @@ export class OrderService {
   getOneOrder(orderId:number): Observable<Object>{
     return this.http.get(API_URL2+'/findone/'+ orderId);
   }
+  updatecompleteOrder(orderId: string): Observable<Object>{
+    return this.http.put(API_URL2+'/updateStatus/'+orderId,null);
+  }
+
 }

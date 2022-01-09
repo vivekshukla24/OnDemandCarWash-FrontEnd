@@ -22,11 +22,12 @@
                 <th scope="col">Washpack No</th>
                 <th scope="col">Status</th>
                 <th scope="col">Car Name</th>
+                <th scope="col">Update Status</th>
               </tr>
             </thead>
             <tbody>
               <tr *ngFor="let order of OrderList; let i=index;">
-                <td>{{i}}</td>
+                <td>{{i+1}}</td>
                 <td>{{ order.useremailid }}</td> 
                 <td>{{ order.phoneNo }}</td>
                 <td>{{ order.areapincode }}</td>
@@ -34,6 +35,10 @@
                 <td>{{ order.washpackId }}</td>
                 <td>{{ order.status }}</td>
                 <td>{{ order.cars.name }}, {{order.cars.model}}</td>
+                <td>
+                  <button (click) = "updateCompleteOrder(order.orderId)" color="accent" mat-raised-button>Completed</button>
+                </td>
+
               </tr>
             </tbody>
           </table>

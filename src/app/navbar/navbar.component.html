@@ -1,9 +1,9 @@
 <nav class="navbar sticky-top navbar-dark bg-dark" >
-  <a class="navbar-brand" href="#">
-    <img src="https://raw.githubusercontent.com/vivekshukla24/assestsODCW/main/car-wash%20(1).png" width="10%" height="10%" style="margin-left: 10px; padding: 0px; border: 0px;"   alt="On Demand car Wash">
-  </a>
+  <button mat-icon-button style="color: white; margin-left: 15px;" (click)="gotoHome();" aria-label="Button to go to home screen">
+      <mat-icon>local_car_wash</mat-icon>
+    </button>
   <div class="text-right">
   <button type="button" mat-raised-button color="primary" (click)="aboutus();" ><b>About</b></button>
-  <button type="button" mat-raised-button color="primary" (click)="aboutus();" ><b>Contact</b></button>
+  <button type="button" mat-raised-button color="primary" (click)="contactus();" ><b>Contact</b></button>
   </div>
 </nav>

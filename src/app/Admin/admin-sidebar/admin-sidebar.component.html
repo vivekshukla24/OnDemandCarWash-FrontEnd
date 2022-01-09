@@ -1,0 +1,13 @@
+<mat-action-list >
+    <div mat-subheader><b>ADMIN</b></div>
+    <button mat-list-item [routerLink]="['/admin']">
+    <fa-icon [icon]="home" style="position:relative; right: 0.2cm;"></fa-icon>Home
+    </button>
+    <button mat-list-item [routerLink]="['/admin/allOrders']">
+    <fa-icon [icon]="shoppingbag" style="position:relative; right: 0.2cm;"></fa-icon>Orders
+    </button>
+     <button mat-list-item [routerLink]="['/admin/addOrder']">
+    <fa-icon [icon]="plus" style="position:relative; right: 0.2cm;"></fa-icon>Add Order
+    </button>
+</mat-action-list>
+

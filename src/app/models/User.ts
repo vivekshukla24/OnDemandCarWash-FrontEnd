@@ -1,13 +1,14 @@
-export class User {
-    email:string;
-    password:string;
-    fullname:string;
-    token:string;
+import { Role } from "./Role"; 
 
-    constructor(email: string, password:string, fullname: string, token:string){
-        this.email=email;
-        this.password=email;
-        this.fullname=fullname;
-        this.token=token;
-    }
+export class User {
+  id: string;
+  email: string = '';
+  password: string = '';
+  fullname: string = '';
+  token: string = '';
+  enabled: boolean = true;
+  roles: Set<Role> | undefined;
+  
+  //Constructor
+  User() {}
 }

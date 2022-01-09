@@ -1,4 +1,4 @@
-.container{
-    position:fixed;
-    left: 40%;
+.mat-card {
+    margin: 13px;
+    padding: 5px;
 }

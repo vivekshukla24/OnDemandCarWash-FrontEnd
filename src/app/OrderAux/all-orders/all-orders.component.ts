@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Order } from 'src/app/models/Order';
 import { OrderService } from 'src/app/services/order.service';
 import { Location } from '@angular/common';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-all-orders',
   templateUrl: './all-orders.component.html',
@@ -24,6 +25,7 @@ export class AllOrdersComponent implements OnInit {
     this.os.deleteOrder(orderid).subscribe((data) => {
       console.log(data);
       this.getAllOrders();
+      Swal.fire('Order Deleted Succesfully');
     });
   }
 }
