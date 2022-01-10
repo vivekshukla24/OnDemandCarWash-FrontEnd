@@ -38,6 +38,9 @@
                 <td>{{ order.status }}</td>
                 <td>{{ order.cars.name }}, {{order.cars.model}}</td>
                 <td>
+                  <button (click) = "updateOrder(order.orderId)" color="accent" mat-flat-button><fa-icon [icon]="edit"></fa-icon>&nbsp;&nbsp;Edit</button>
+                </td>
+                <td>
                   <button (click) = "deleteOrder(order.orderId)" color="warn" mat-mini-fab><fa-icon [icon]="trash"></fa-icon></button>
                 </td>
               </tr>

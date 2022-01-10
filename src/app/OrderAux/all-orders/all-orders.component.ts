@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { Order } from 'src/app/models/Order';
 import { OrderService } from 'src/app/services/order.service';
 import { Location } from '@angular/common';
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faTrash,faEdit } from '@fortawesome/free-solid-svg-icons';
 import Swal from 'sweetalert2';
 @Component({
   selector: 'app-all-orders',
@@ -12,17 +12,21 @@ import Swal from 'sweetalert2';
 })
 export class AllOrdersComponent implements OnInit {
   trash=faTrash;
+  edit=faEdit;
   OrderList: Array<Order> = [];
   constructor(private os: OrderService, private router: Router, private location: Location) {}
   ngOnInit(): void {
     this.getAllOrders();
   }
+
   // A method defined here to call order Service
   private getAllOrders() {
     this.os.getallOrders().subscribe((data) => {
       this.OrderList = data;
     });
   }
+
+  //To delete an order with one button click
   deleteOrder(orderid: string) {
     this.os.deleteOrder(orderid).subscribe((data) => {
       console.log(data);
@@ -33,4 +37,10 @@ export class AllOrdersComponent implements OnInit {
       });
     });
   }
+
+  //To update the details of the order 
+  updateOrder(orderid: string){
+    this.router.navigate([`updateOrder/${orderid}`]);
+  }
+
 }

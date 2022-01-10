@@ -19,6 +19,7 @@ import { NotAuthComponent } from './not-auth/not-auth.component';
 import { AuthGuardService } from './authGuard/auth-guard.service';
 import { GetallWashersComponent } from './Admin/getall-washers/getall-washers.component';
 import { GetallUsersComponent } from './Admin/getall-users/getall-users.component';
+import { UpdateOrderComponent } from './OrderAux/update-order/update-order.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -62,6 +63,11 @@ const routes: Routes = [
         canActivate: [AuthGuardService],
       },
       {
+        path:'updateOrder:/id',
+        component: UpdateOrderComponent,
+        canActivate: [AuthGuardService],
+      },
+      {
         path: 'users',
         component: GetallUsersComponent,
         canActivate: [AuthGuardService],
@@ -84,6 +90,11 @@ const routes: Routes = [
         component: AddOrderComponent,
         canActivate: [AuthGuardService],
       },
+      {
+        path:'updateOrder',
+        component: UpdateOrderComponent,
+        canActivate:[AuthGuardService],
+      }
     ],
   },
   {
