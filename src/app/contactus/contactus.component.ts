@@ -3,6 +3,7 @@ import {
   faPhone,
   faEnvelope,
   faMapMarkerAlt,
+  faDotCircle,
 } from '@fortawesome/free-solid-svg-icons'; 
 
 @Component({
@@ -12,6 +13,7 @@ import {
 })
 export class ContactusComponent implements OnInit {
   mobile = faPhone;
+  dot=faDotCircle;
   envelope = faEnvelope;
   marker = faMapMarkerAlt;
   constructor() {}
