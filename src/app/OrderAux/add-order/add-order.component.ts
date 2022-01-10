@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Order } from '../../models/Order';
 import { OrderService } from '../../services/order.service';
-import { faShoppingBasket, faThumbsDown } from '@fortawesome/free-solid-svg-icons';
+import { faShoppingBasket} from '@fortawesome/free-solid-svg-icons';
 import Swal from 'sweetalert2';
-import { Car } from 'src/app/models/Car';
 @Component({
   selector: 'app-add-order',
   templateUrl: './add-order.component.html',
@@ -16,11 +15,13 @@ export class AddOrderComponent implements OnInit {
   sb = faShoppingBasket;
   ngOnInit(): void {}
 
-
   addOrder(order: Order){
     this.os.addOrder(this.order).subscribe(data =>{
       console.log(data);
-      Swal.fire("Order Booked")
+      Swal.fire({
+        title:"Order Booked",
+        icon:'success'
+    })
     });
   }
 }

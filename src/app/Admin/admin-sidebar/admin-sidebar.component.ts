@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faHome, faShoppingBag, faPlus, faInfoCircle, faPhoneSquareAlt } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faShoppingBag, faPlus, faInfoCircle, faPhoneSquareAlt, faAddressCard, faSuitcase } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-admin-sidebar',
   templateUrl: './admin-sidebar.component.html',
@@ -11,6 +11,8 @@ export class AdminSidebarComponent implements OnInit {
   plus=faPlus;
   info =faInfoCircle;
   phone =faPhoneSquareAlt;
+  user=faAddressCard;
+  washer=faSuitcase;
   constructor() {}
 
   ngOnInit(): void {}

@@ -5,9 +5,10 @@
 export const environment = {
   production: false,
   BASE_URL_USER: 'http://localhost:8083/users',
-  BASE_URL_ORDER:'http://localhost:8082/orders',
-  BASE_URL_WASHER:'http://localhost:8085/washers',
-  BASE_URL_AUTH:'http://localhost:9000/api/auth',
+  BASE_URL_ORDER: 'http://localhost:8082/orders',
+  BASE_URL_WASHER: 'http://localhost:8085/washers',
+  BASE_URL_AUTH: 'http://localhost:9000/api/auth',
+  BASE_URL_MGMT: 'http://localhost:9000/manage',
 };
 
 /*

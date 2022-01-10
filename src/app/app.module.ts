@@ -25,7 +25,11 @@ import { ContactusComponent } from './contactus/contactus.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NotAuthComponent } from './not-auth/not-auth.component'; 
+import { NotAuthComponent } from './not-auth/not-auth.component';
+import { UserSidebarComponent } from './User/user-sidebar/user-sidebar.component';
+import { WasherSidebarComponent } from './Washer/washer-sidebar/washer-sidebar.component';
+import { GetallUsersComponent } from './Admin/getall-users/getall-users.component';
+import { GetallWashersComponent } from './Admin/getall-washers/getall-washers.component'; 
 
 @NgModule({
   declarations: [
@@ -50,6 +54,10 @@ import { NotAuthComponent } from './not-auth/not-auth.component';
     LoginComponent,
     RegisterComponent,
     NotAuthComponent,
+    UserSidebarComponent,
+    WasherSidebarComponent,
+    GetallUsersComponent,
+    GetallWashersComponent,
   ],
   imports: [
     BrowserModule,

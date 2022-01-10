@@ -23,7 +23,6 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
     if (this.authenticationService.currentUserValue?.id) {
       this.router.navigate(['/home']);
-      return;
     }
   }
   validateRole(value: string) {

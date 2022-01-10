@@ -1,23 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../services/authentication.service';
-import { faLaugh } from '@fortawesome/free-regular-svg-icons';
-import { faRegistered } from '@fortawesome/free-regular-svg-icons';
 import { User } from '../models/User';
 import Swal from 'sweetalert2';
-
+import { faLockOpen } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  falaugh = faLaugh;
-  faReg = faRegistered;
-
+  
+  lock=faLockOpen;
   user1: User = new User();
   errorMessage: string = '';
-  role = '';
+  role:string = '';
 
   constructor(
     private authenticationService: AuthenticationService,
@@ -25,7 +22,7 @@ export class LoginComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    var iterator = this.authenticationService.currentUserValue.roles?.values();
+    var iterator = this.authenticationService.currentUserValue?.roles?.values();
     this.role = iterator?.next()?.value['role'];
     if (this.authenticationService.currentUserValue?.id) {
       console.log(this.authenticationService.currentUserValue?.id);
@@ -41,7 +38,6 @@ export class LoginComponent implements OnInit {
         Swal.fire(
           'Login Successful ',
           'You are logged in as ' + data.roles[0].role
-          
         );
         
         if (data.roles[0].role === 'ADMIN') {

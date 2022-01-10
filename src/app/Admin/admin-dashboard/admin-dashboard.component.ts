@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-admin-dashboard',
@@ -8,8 +7,7 @@ import { faHome } from '@fortawesome/free-solid-svg-icons';
 })
 export class AdminDashboardComponent implements OnInit {
   home=faHome;
-  constructor(private router: Router) {}
-  ngOnInit(): void {}
-
-
+  constructor() {}
+  ngOnInit(): void {
+  }
 }

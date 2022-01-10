@@ -11,14 +11,14 @@ import { AuthenticationService } from '../services/authentication.service';
 export class NavbarComponent implements OnInit {
   car = faCar;
   currentUser: User = new User();
-  role = '';
+  role: string = '';
   constructor(
     private router: Router,
     private authenticationService: AuthenticationService
   ) {
     this.authenticationService.currentUser.subscribe((data) => {
       this.currentUser = data;
-      var iterator = this.currentUser.roles?.values();
+      var iterator = this.currentUser?.roles?.values();
       this.role = iterator?.next()?.value['role'];
       console.log(this.role);
     });

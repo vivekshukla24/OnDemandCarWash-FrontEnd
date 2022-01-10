@@ -17,6 +17,8 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { NotAuthComponent } from './not-auth/not-auth.component';
 import { AuthGuardService } from './authGuard/auth-guard.service';
+import { GetallWashersComponent } from './Admin/getall-washers/getall-washers.component';
+import { GetallUsersComponent } from './Admin/getall-users/getall-users.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -29,12 +31,46 @@ const routes: Routes = [
     canActivate: [AuthGuardService],
     data: { roles: ['ADMIN'] },
     children: [
-      { path: 'completed', component: CompletedOrdersComponent },
-      { path: 'pending', component: PendingOrdersComponent },
-      { path: 'unassigned', component: UnassignedOrdersComponent },
-      { path: 'cancelled', component: CancelledOrdersComponent },
-      { path: 'allOrders', component: AllOrdersComponent },
-      { path: 'addOrder', component: AddOrderComponent },
+      {
+        path: 'completed',
+        component: CompletedOrdersComponent,
+        canActivate: [AuthGuardService],
+      },
+      {
+        path: 'pending',
+        component: PendingOrdersComponent,
+        canActivate: [AuthGuardService],
+      },
+      {
+        path: 'unassigned',
+        component: UnassignedOrdersComponent,
+        canActivate: [AuthGuardService],
+      },
+      {
+        path: 'cancelled',
+        component: CancelledOrdersComponent,
+        canActivate: [AuthGuardService],
+      },
+      {
+        path: 'allOrders',
+        component: AllOrdersComponent,
+        canActivate: [AuthGuardService],
+      },
+      {
+        path: 'addOrder',
+        component: AddOrderComponent,
+        canActivate: [AuthGuardService],
+      },
+      {
+        path: 'users',
+        component: GetallUsersComponent,
+        canActivate: [AuthGuardService],
+      },
+      {
+        path: 'washers',
+        component: GetallWashersComponent,
+        canActivate: [AuthGuardService],
+      },
     ],
   },
   {
@@ -42,7 +78,13 @@ const routes: Routes = [
     component: UserDashboardComponent,
     canActivate: [AuthGuardService],
     data: { roles: ['USER'] },
-    children: [{ path: 'addOrder', component: AddOrderComponent }],
+    children: [
+      {
+        path: 'addOrder',
+        component: AddOrderComponent,
+        canActivate: [AuthGuardService],
+      },
+    ],
   },
   {
     path: 'washer',
@@ -50,12 +92,13 @@ const routes: Routes = [
     canActivate: [AuthGuardService],
     data: { roles: ['WASHER'] },
     children: [
-      { path: 'pending', component: PendingOrdersComponent },
-      { path: 'unassigned', component: UnassignedOrdersComponent },
+      {
+        path: 'unassigned',
+        component: UnassignedOrdersComponent,
+        canActivate: [AuthGuardService],
+      },
     ],
   },
-  { path: 'allOrders', component: AllOrdersComponent },
-  { path: 'addOrder', component: AddOrderComponent },
   { path: 'aboutus', component: AboutusComponent },
   { path: 'contact', component: ContactusComponent },
   { path: 'badcred', component: NotAuthComponent },

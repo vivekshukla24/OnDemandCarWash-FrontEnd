@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import {
   faShippingFast,
   faBoxOpen,
@@ -29,7 +30,11 @@ export class HomeComponent implements OnInit {
   mobile = faPhone;
   envelope = faEnvelope;
   marker = faMapMarkerAlt;
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
+
+  regis(){
+    this.router.navigateByUrl('/register');
+  };
 }

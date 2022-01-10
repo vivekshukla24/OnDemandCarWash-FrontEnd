@@ -3,41 +3,64 @@ import { HttpClient } from "@angular/common/http";
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Order } from '../models/Order';
+import { RequestBaseService } from './request-base.service';
+import { AuthenticationService } from './authentication.service';
 const API_URL2 = `${environment.BASE_URL_ORDER}`;
 
 @Injectable({
   providedIn: 'root',
 })
-
-export class OrderService {
-  constructor(private http: HttpClient) {}
+export class OrderService extends RequestBaseService {
+  constructor(
+    authenticationService: AuthenticationService,
+    http: HttpClient
+  ) {
+    super(authenticationService,http);
+  }
 
   getallOrders(): Observable<Order[]> {
-    return this.http.get<Order[]>(API_URL2 + '/findall');
+    return this.http.get<Order[]>(API_URL2 + '/findall', {
+      headers: this.getHeaders,
+    });
   }
   getCompletedOrders(): Observable<Order[]> {
-    return this.http.get<Order[]>(API_URL2 + '/findCompleted');
+    return this.http.get<Order[]>(API_URL2 + '/findCompleted', {
+      headers: this.getHeaders,
+    });
   }
   getPendingOrders(): Observable<Order[]> {
-    return this.http.get<Order[]>(API_URL2 + '/findPending');
+    return this.http.get<Order[]>(API_URL2 + '/findPending', {
+      headers: this.getHeaders,
+    });
   }
   getUnassignedOrders(): Observable<Order[]> {
-    return this.http.get<Order[]>(API_URL2 + '/findUnassigned');
+    return this.http.get<Order[]>(API_URL2 + '/findUnassigned', {
+      headers: this.getHeaders,
+    });
   }
   getCancelledOrders(): Observable<Order[]> {
-    return this.http.get<Order[]>(API_URL2 + '/findCancelled');
+    return this.http.get<Order[]>(API_URL2 + '/findCancelled', {
+      headers: this.getHeaders,
+    });
   }
-  addOrder(order: Order): Observable<Object>{
-    return this.http.post(API_URL2 +'/add', order);
+  addOrder(order: Order): Observable<Object> {
+    return this.http.post(API_URL2 + '/add', order, {
+      headers: this.getHeaders,
+    });
   }
-  deleteOrder(orderId: string): Observable<any>{
-    return this.http.delete(API_URL2+'/delete/'+orderId);
+  deleteOrder(orderId: string): Observable<any> {
+    return this.http.delete(API_URL2 + '/delete/' + orderId, {
+      headers: this.getHeaders,
+    });
   }
-  getOneOrder(orderId:number): Observable<Object>{
-    return this.http.get(API_URL2+'/findone/'+ orderId);
+  getOneOrder(orderId: number): Observable<Object> {
+    return this.http.get(API_URL2 + '/findone/' + orderId, {
+      headers: this.getHeaders,
+    });
   }
-  updatecompleteOrder(orderId: string): Observable<Object>{
-    return this.http.put(API_URL2+'/updateStatus/'+orderId,null);
+  updatecompleteOrder(orderId: string): Observable<Object> {
+    return this.http.put(API_URL2 + '/updateStatus/' + orderId, {
+      headers: this.getHeaders,
+    });
   }
-
 }
