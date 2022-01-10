@@ -12,11 +12,8 @@ const API_URL2 = `${environment.BASE_URL_ORDER}`;
   providedIn: 'root',
 })
 export class OrderService extends RequestBaseService {
-  constructor(
-    authenticationService: AuthenticationService,
-    http: HttpClient
-  ) {
-    super(authenticationService,http);
+  constructor(authenticationService: AuthenticationService, http: HttpClient) {
+    super(authenticationService, http);
   }
 
   getallOrders(): Observable<Order[]> {
@@ -54,14 +51,19 @@ export class OrderService extends RequestBaseService {
       headers: this.getHeaders,
     });
   }
-  getOneOrder(orderId: number): Observable<Object> {
-    return this.http.get(API_URL2 + '/findone/' + orderId, {
+  getOneOrder(orderId: string): Observable<Order> {
+    return this.http.get<Order>(API_URL2 + '/findone/' + orderId, {
       headers: this.getHeaders,
     });
   }
   updatecompleteOrder(orderId: string): Observable<Object> {
     return this.http.put(API_URL2 + '/updateStatus/' + orderId, {
       headers: this.getHeaders,
+    });
+  }
+  updateOrder(orderId: string, order: Order):Observable<Object>{
+    return this.http.put(API_URL2+'/update/'+orderId,order,{
+      headers:this.getHeaders,
     });
   }
 }

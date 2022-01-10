@@ -63,7 +63,7 @@ const routes: Routes = [
         canActivate: [AuthGuardService],
       },
       {
-        path:'updateOrder:/id',
+        path: 'updateOrder/:id',
         component: UpdateOrderComponent,
         canActivate: [AuthGuardService],
       },
@@ -91,10 +91,15 @@ const routes: Routes = [
         canActivate: [AuthGuardService],
       },
       {
-        path:'updateOrder',
+        path: 'updateOrder',
         component: UpdateOrderComponent,
-        canActivate:[AuthGuardService],
-      }
+        canActivate: [AuthGuardService],
+      },
+      {
+        path: 'updateOrder/:id',
+        component: UpdateOrderComponent,
+        canActivate: [AuthGuardService],
+      },
     ],
   },
   {

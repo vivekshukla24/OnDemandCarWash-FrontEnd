@@ -29,7 +29,8 @@ import { NotAuthComponent } from './not-auth/not-auth.component';
 import { UserSidebarComponent } from './User/user-sidebar/user-sidebar.component';
 import { WasherSidebarComponent } from './Washer/washer-sidebar/washer-sidebar.component';
 import { GetallUsersComponent } from './Admin/getall-users/getall-users.component';
-import { GetallWashersComponent } from './Admin/getall-washers/getall-washers.component'; 
+import { GetallWashersComponent } from './Admin/getall-washers/getall-washers.component';
+import { MyOrdersComponent } from './OrderAux/my-orders/my-orders.component'; 
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { GetallWashersComponent } from './Admin/getall-washers/getall-washers.co
     WasherSidebarComponent,
     GetallUsersComponent,
     GetallWashersComponent,
+    MyOrdersComponent,
   ],
   imports: [
     BrowserModule,

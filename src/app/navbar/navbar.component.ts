@@ -39,8 +39,8 @@ export class NavbarComponent implements OnInit {
   isAdmin() {
     return this.role === 'ADMIN';
   }
-  isCompany() {
-    return this.role === 'COMPANY';
+  isWasher() {
+    return this.role === 'WASHER';
   }
   isUser() {
     return this.role === 'USER';
@@ -52,12 +52,12 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['/login']);
   }
 
-  //Displaying the role on navbar
+  //Chosing to navigate dashboard using role
   properRole() {
     if (this.isAdmin()) {
       this.router.navigate(['/admin']);
-    } else if (this.isCompany()) {
-      this.router.navigate(['/company']);
+    } else if (this.isWasher()) {
+      this.router.navigate(['/washer']);
     } else {
       this.router.navigate(['/user']);
     }

@@ -38,9 +38,9 @@ export class AllOrdersComponent implements OnInit {
     });
   }
 
-  //To update the details of the order 
+  //To update the details of the order redirects to the page
   updateOrder(orderid: string){
-    this.router.navigate([`updateOrder/${orderid}`]);
+    this.router.navigateByUrl(`admin/updateOrder/${orderid}`)
   }
 
 }
