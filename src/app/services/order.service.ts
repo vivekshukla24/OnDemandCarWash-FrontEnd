@@ -6,7 +6,7 @@ import { Order } from '../models/Order';
 import { RequestBaseService } from './request-base.service';
 import { AuthenticationService } from './authentication.service';
 
-const API_URL2 = `${environment.BASE_URL_ORDER}`;
+const API_URL2 = environment.BASE_URL_ORDER;
 
 @Injectable({
   providedIn: 'root',
@@ -57,7 +57,7 @@ export class OrderService extends RequestBaseService {
     });
   }
   updatecompleteOrder(orderId: string): Observable<Object> {
-    return this.http.put(API_URL2 + '/updateStatus/' + orderId, {
+    return this.http.put(API_URL2+'/updateStatus/'+ orderId, {
       headers: this.getHeaders,
     });
   }

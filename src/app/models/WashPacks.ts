@@ -1,8 +1,8 @@
 export class WashPacks{
-    id: number;
-    name: string="";
+    id: string;
+    name: string;
     cost: number;
-    description: string="";
+    description: string;
 
     //Empty Constructor
     WashPacks(){}

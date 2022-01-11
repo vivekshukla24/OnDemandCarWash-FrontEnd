@@ -36,9 +36,8 @@
                 <td>{{ order.status }}</td>
                 <td>{{ order.cars.name }}, {{order.cars.model}}</td>
                 <td>
-                  <button (click) = "updateCompleteOrder(order.orderId)" color="accent" mat-mini-fab><fa-icon [icon]="tick"></fa-icon></button>
+                  <button (click) = "CompleteOrder(order.orderId);" color="accent" mat-mini-fab><fa-icon [icon]="tick"></fa-icon></button>
                 </td>
-
               </tr>
             </tbody>
           </table>

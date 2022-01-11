@@ -5,7 +5,9 @@ import { Observable } from 'rxjs';
 import { RequestBaseService } from './request-base.service';
 import { AuthenticationService } from './authentication.service';
 import { User } from '../models/User';
-const API_URL_5=`${environment.BASE_URL_MGMT}`
+
+const API_URL_5 = environment.BASE_URL_MGMT;
+
 @Injectable({
   providedIn: 'root',
 })

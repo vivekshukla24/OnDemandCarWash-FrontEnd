@@ -1,9 +1,25 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { AuthenticationService } from 'src/app/services/authentication.service';
+import { RequestBaseService } from 'src/app/services/request-base.service';
+import { Order } from 'src/app/models/Order';
+import { environment } from 'src/environments/environment';
+import { Observable } from 'rxjs';
+
+const API_URL_USER = environment.BASE_URL_USER
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class UserService {
+export class UserService extends RequestBaseService {
+  constructor(authenticationService: AuthenticationService, http: HttpClient) {
+    super(authenticationService, http);
+  }
 
-  constructor() { }
+  addOrder(order: Order): Observable<Object> {
+    return this.http.post(API_URL_USER + '/addOrder', order, {
+      headers: this.getHeaders,
+    });
+  }
+
 }

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { Router, RouterModule, Routes } from '@angular/router';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { AddOrderComponent } from './OrderAux/add-order/add-order.component';
@@ -20,6 +20,9 @@ import { AuthGuardService } from './authGuard/auth-guard.service';
 import { GetallWashersComponent } from './Admin/getall-washers/getall-washers.component';
 import { GetallUsersComponent } from './Admin/getall-users/getall-users.component';
 import { UpdateOrderComponent } from './OrderAux/update-order/update-order.component';
+import { AddUserOrderComponent } from './User/add-user-order/add-user-order.component';
+import { AllWashPackComponent } from './Admin/all-wash-pack/all-wash-pack.component';
+import { AddWashpackComponent } from './Admin/add-washpack/add-washpack.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -68,6 +71,17 @@ const routes: Routes = [
         canActivate: [AuthGuardService],
       },
       {
+        path: 'wp',
+        component: AllWashPackComponent,
+        canActivate:[AuthGuardService]
+
+      },
+      {
+        path: 'addwp',
+        component: AddWashpackComponent,
+        canActivate: [AuthGuardService]
+      },
+      {
         path: 'users',
         component: GetallUsersComponent,
         canActivate: [AuthGuardService],
@@ -87,7 +101,7 @@ const routes: Routes = [
     children: [
       {
         path: 'addOrder',
-        component: AddOrderComponent,
+        component: AddUserOrderComponent,
         canActivate: [AuthGuardService],
       },
       {

@@ -30,7 +30,9 @@ import { UserSidebarComponent } from './User/user-sidebar/user-sidebar.component
 import { WasherSidebarComponent } from './Washer/washer-sidebar/washer-sidebar.component';
 import { GetallUsersComponent } from './Admin/getall-users/getall-users.component';
 import { GetallWashersComponent } from './Admin/getall-washers/getall-washers.component';
-import { MyOrdersComponent } from './OrderAux/my-orders/my-orders.component'; 
+import { AddUserOrderComponent } from './User/add-user-order/add-user-order.component';
+import { AddWashpackComponent } from './Admin/add-washpack/add-washpack.component';
+import { AllWashPackComponent } from './Admin/all-wash-pack/all-wash-pack.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +61,9 @@ import { MyOrdersComponent } from './OrderAux/my-orders/my-orders.component';
     WasherSidebarComponent,
     GetallUsersComponent,
     GetallWashersComponent,
-    MyOrdersComponent,
+    AddUserOrderComponent,
+    AddWashpackComponent,
+    AllWashPackComponent,
   ],
   imports: [
     BrowserModule,

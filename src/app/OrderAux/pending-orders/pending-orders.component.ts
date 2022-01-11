@@ -21,11 +21,12 @@ export class PendingOrdersComponent implements OnInit {
       this.OrderList = data;
     });
   }
+  
   back() {
     this.location.back();
   }
 
-  updateCompleteOrder(orderId : string) {
+  CompleteOrder(orderId : string) {
     this.os.updatecompleteOrder(orderId).subscribe((data)=>{
       console.log(data);
       Swal.fire({
