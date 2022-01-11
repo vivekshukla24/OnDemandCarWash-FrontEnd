@@ -28,15 +28,25 @@ export class AllOrdersComponent implements OnInit {
 
   //To delete an order with one button click
   deleteOrder(orderid: string) {
-    this.os.deleteOrder(orderid).subscribe((data) => {
-      console.log(data);
-      this.getAllOrders();
-      Swal.fire({
-        title: 'Order Deleted Succesfully',
-        icon: 'success',
-      });
+    Swal.fire({
+      title: 'Do you really want to delete this order?',
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: 'Delete',
+      denyButtonText: `Don't Delete`,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.os.deleteOrder(orderid).subscribe((data) => {
+          console.log(data);
+          this.getAllOrders();
+        });
+        Swal.fire('Order Deleted Succesfully');
+      } else if (result.isDenied) {
+        Swal.fire('Order Was not deleted');
+      }
     });
   }
+
 
   //To update the details of the order redirects to the page
   updateOrder(orderid: string){
@@ -44,3 +54,5 @@ export class AllOrdersComponent implements OnInit {
   }
 
 }
+
+

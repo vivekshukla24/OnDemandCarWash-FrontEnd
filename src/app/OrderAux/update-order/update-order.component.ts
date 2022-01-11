@@ -13,7 +13,7 @@ import Swal from 'sweetalert2';
 export class UpdateOrderComponent implements OnInit {
   order: Order = new Order();
   edit = faMoneyCheck;
-  id:string;
+  id: string;
 
   constructor(private os: OrderService, private activeRoute: ActivatedRoute, private router: Router) {}
 
@@ -26,15 +26,15 @@ export class UpdateOrderComponent implements OnInit {
   };
 
   updateOrderNow(){
-    this.os.updateOrder(this.id,this.order).subscribe(data=>{
+    this.os.updateOrder(this.id,this.order).subscribe((data)=>{
       console.log(data);
       Swal.fire({
         title:"Order updated",
         icon:"success"
-      })
+      });
       this.goToAllOrders();
-    })
-  };
+    });
+  }
 
   goToAllOrders(){
     this.router.navigate(['/admin/allOrders'])

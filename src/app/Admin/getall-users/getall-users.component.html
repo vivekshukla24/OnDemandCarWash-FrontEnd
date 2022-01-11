@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-3 padding-1" *ngFor="let user of userList; index as ind">
-                <mat-card class="example-card" >
+                <mat-card class="example-card">
                     <div class="container-fluid icon text-center">
                         <mat-icon mat-list-icon [inline]="true">account_circle</mat-icon>
                     </div>
@@ -16,7 +16,7 @@
                         </mat-action-list>
                     </mat-card-content>
                     <mat-card-actions class="text-center ml mb">
-                      <button mat-fab (click)="deleteUser(user);" color="warn"><mat-icon mat-list-icon class="mat-18">delete</mat-icon></button>
+                      <button mat-fab (click)="deleteUser(user);" color="warn"><mat-icon mat-list-icon>delete</mat-icon></button>
                     </mat-card-actions>
                   </mat-card>
             </div>

@@ -38,8 +38,11 @@ export class RegisterComponent implements OnInit {
     this.authenticationService.register(this.user).subscribe(
       (data) => {
         console.log(data);
-        Swal.fire('Welcome to HappyCars Network');
-
+        Swal.fire({
+          icon: 'success',
+          title: 'Welcome To HappyCars Network',
+          text: 'You are registered succesfully',
+        });
         this.router.navigate(['/login']);
       },
       (err) => {

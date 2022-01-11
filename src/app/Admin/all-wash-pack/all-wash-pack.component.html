@@ -27,7 +27,7 @@
                 <td> ₹{{wp.cost}} </td>
                 <td> {{wp.description}} </td>
                 <td>
-                  <button color="accent" mat-raised-button><fa-icon [icon]="edit"></fa-icon>&nbsp;&nbsp;Edit</button>
+                  <button (click)='updateWP(wp.id);' color="accent" mat-raised-button><fa-icon [icon]="edit"></fa-icon>&nbsp;&nbsp;Edit</button>
                 </td>
                 <td>
                   <button (click)='delWP(wp.id);' color="warn" mat-mini-fab><fa-icon [icon]="trash"></fa-icon></button>

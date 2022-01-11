@@ -23,6 +23,8 @@ import { UpdateOrderComponent } from './OrderAux/update-order/update-order.compo
 import { AddUserOrderComponent } from './User/add-user-order/add-user-order.component';
 import { AllWashPackComponent } from './Admin/all-wash-pack/all-wash-pack.component';
 import { AddWashpackComponent } from './Admin/add-washpack/add-washpack.component';
+import { UpdateWashpackComponent } from './Admin/update-washpack/update-washpack.component';
+import { MyOrdersComponent } from './User/my-orders/my-orders.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -82,6 +84,11 @@ const routes: Routes = [
         canActivate: [AuthGuardService]
       },
       {
+        path: 'updateWP/:id',
+        component:UpdateWashpackComponent,
+        canActivate: [AuthGuardService],
+      },
+      {
         path: 'users',
         component: GetallUsersComponent,
         canActivate: [AuthGuardService],
@@ -114,6 +121,11 @@ const routes: Routes = [
         component: UpdateOrderComponent,
         canActivate: [AuthGuardService],
       },
+      {
+        path: 'myorders',
+        component: MyOrdersComponent,
+        canActivate: [AuthGuardService],
+      }
     ],
   },
   {

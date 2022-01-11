@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminService } from 'src/app/entityServices/admin-service/admin.service';
 import { WashPacks } from 'src/app/models/WashPacks';
+import { Router } from '@angular/router';
 import { faTrash, faEdit } from '@fortawesome/free-solid-svg-icons';
 import Swal from 'sweetalert2';
 @Component({
@@ -12,7 +13,7 @@ export class AllWashPackComponent implements OnInit {
   WPList: Array<WashPacks> = [];
   trash = faTrash;
   edit = faEdit;
-  constructor(private as: AdminService) {}
+  constructor(private as: AdminService, private router: Router) {}
 
   ngOnInit(): void {
     this.getWP();
@@ -32,5 +33,9 @@ export class AllWashPackComponent implements OnInit {
          icon: 'success',
        });
     })
+  }
+
+  updateWP(id:string){
+    this.router.navigateByUrl(`admin/updateWP/${id}`);
   }
 }

@@ -5,6 +5,7 @@ import {
   faPlus,
   faInfoCircle,
   faPhoneSquareAlt,
+  faBoxOpen
 } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-user-sidebar',
@@ -17,6 +18,7 @@ export class UserSidebarComponent implements OnInit {
   plus = faPlus;
   info = faInfoCircle;
   phone = faPhoneSquareAlt;
+  box=faBoxOpen;
   constructor() {}
   
   ngOnInit(): void {}

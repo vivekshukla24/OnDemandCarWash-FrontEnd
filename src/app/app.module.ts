@@ -33,6 +33,9 @@ import { GetallWashersComponent } from './Admin/getall-washers/getall-washers.co
 import { AddUserOrderComponent } from './User/add-user-order/add-user-order.component';
 import { AddWashpackComponent } from './Admin/add-washpack/add-washpack.component';
 import { AllWashPackComponent } from './Admin/all-wash-pack/all-wash-pack.component';
+import { UpdateWashpackComponent } from './Admin/update-washpack/update-washpack.component';
+import { MyOrdersComponent } from './User/my-orders/my-orders.component';
+import { MyProfileComponent } from './my-profile/my-profile.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +67,9 @@ import { AllWashPackComponent } from './Admin/all-wash-pack/all-wash-pack.compon
     AddUserOrderComponent,
     AddWashpackComponent,
     AllWashPackComponent,
+    UpdateWashpackComponent,
+    MyOrdersComponent,
+    MyProfileComponent
   ],
   imports: [
     BrowserModule,

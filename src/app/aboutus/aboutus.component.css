@@ -1,10 +1,10 @@
 .banner-img{
-    background-image: url('https://raw.githubusercontent.com/vivekshukla24/assestsODCW/main/banner-img.jpg');
-    height: 400px;
+    background-image: url('https://raw.githubusercontent.com/vivekshukla24/assestsODCW/main/banner%20img.jpg');
+    height: 500px;
     background-attachment: fixed;
     background-position: center bottom;
     background-size: cover;
-    opacity: 0.78;
+    opacity: 0.85;
 }
 
 .container-fluid {

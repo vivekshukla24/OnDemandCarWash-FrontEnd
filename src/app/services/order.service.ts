@@ -57,13 +57,23 @@ export class OrderService extends RequestBaseService {
     });
   }
   updatecompleteOrder(orderId: string): Observable<Object> {
-    return this.http.put(API_URL2+'/updateStatus/'+ orderId, {
+    return this.http.put(API_URL2 + '/updateStatus/' + orderId, {
       headers: this.getHeaders,
     });
   }
-  updateOrder(orderId: string, order: Order):Observable<Object>{
-    return this.http.put(API_URL2+'/update/'+orderId,order,{
-      headers:this.getHeaders,
+  updateOrder(orderId: string, order: Order): Observable<Object> {
+    return this.http.put(API_URL2 + '/update/' + orderId, order, {
+      headers: this.getHeaders,
+    });
+  }
+  getByemail(email: string): Observable<Order[]> {
+    return this.http.get<Order[]>(API_URL2 + '/findMyOrders/' + email, {
+      headers: this.getHeaders,
+    });
+  }
+  getWasherOrder(washername: string): Observable<Order[]> {
+    return this.http.get<Order[]>(API_URL2 +'/washerSpecficOrder/'+washername,{
+      headers: this.getHeaders,
     });
   }
 }
