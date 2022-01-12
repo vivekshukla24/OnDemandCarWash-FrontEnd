@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Order } from 'src/app/models/Order';
+import { WashPacks } from 'src/app/models/WashPacks';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { RequestBaseService } from 'src/app/services/request-base.service';
 import { environment } from 'src/environments/environment';
@@ -23,6 +24,11 @@ export class WasherService extends RequestBaseService {
   }
   updatecompleteOrder(orderId: string): Observable<Object> {
     return this.http.put(API_URL_6 + '/updateStatus/' + orderId, {
+      headers: this.getHeaders,
+    });
+  }
+  getWPs(): Observable<WashPacks[]> {
+    return this.http.get<WashPacks[]>(API_URL_6 + '/seeWP', {
       headers: this.getHeaders,
     });
   }

@@ -3,11 +3,14 @@
     <button mat-list-item [routerLink]="['/washer']">
     <fa-icon [icon]="home" style="position:relative; right: 0.2cm;"></fa-icon>Home
     </button>
-    <button mat-list-item [routerLink]="['/washer/unassigned']">
-    <fa-icon [icon]="shoppingbag" style="position:relative; right: 0.2cm;"></fa-icon>Unassigned Orders
+    <button mat-list-item [routerLink]="['/washer/notAssigned']">
+    <fa-icon [icon]="un" style="position:relative; right: 0.2cm;"></fa-icon>Unassigned 
     </button>
     <button mat-list-item [routerLink]="['/washer']">
     <fa-icon [icon]="shoppingbag" style="position:relative; right: 0.2cm;"></fa-icon>My Orders
+    </button>
+    <button mat-list-item [routerLink]="['/washer/washpacks']">
+    <fa-icon [icon]="box" style="position:relative; right: 0.2cm;"></fa-icon>Washpacks
     </button>
     <button mat-list-item [routerLink]="['/aboutus']">
     <fa-icon [icon]="info" style="position:relative; right: 0.2cm;"></fa-icon>About

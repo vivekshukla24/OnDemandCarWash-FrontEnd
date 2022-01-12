@@ -26,6 +26,8 @@ import { AddWashpackComponent } from './Admin/add-washpack/add-washpack.componen
 import { UpdateWashpackComponent } from './Admin/update-washpack/update-washpack.component';
 import { MyOrdersComponent } from './User/my-orders/my-orders.component';
 import { UserWpViewComponent } from './User/user-wp-view/user-wp-view.component';
+import { UnassignedWasherViewComponent } from './Washer/unassigned-washer-view/unassigned-washer-view.component';
+import { WasherWpViewComponent } from './Washer/washer-wp-view/washer-wp-view.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -141,10 +143,15 @@ const routes: Routes = [
     data: { roles: ['WASHER'] },
     children: [
       {
-        path: 'unassigned',
-        component: UnassignedOrdersComponent,
-        canActivate: [AuthGuardService],
+        path:'notAssigned',
+        component: UnassignedWasherViewComponent,
+        canActivate:[AuthGuardService],
       },
+      {
+        path:'washpacks',
+        component: WasherWpViewComponent,
+        canActivate:[AuthGuardService],
+      }
     ],
   },
   { path: 'aboutus', component: AboutusComponent },

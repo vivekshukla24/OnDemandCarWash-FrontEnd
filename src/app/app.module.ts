@@ -38,6 +38,8 @@ import { MyOrdersComponent } from './User/my-orders/my-orders.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
 import { MywasherOrdersComponent } from './Washer/mywasher-orders/mywasher-orders.component';
 import { UserWpViewComponent } from './User/user-wp-view/user-wp-view.component';
+import { UnassignedWasherViewComponent } from './Washer/unassigned-washer-view/unassigned-washer-view.component';
+import { WasherWpViewComponent } from './Washer/washer-wp-view/washer-wp-view.component';
 
 @NgModule({
   declarations: [
@@ -73,7 +75,9 @@ import { UserWpViewComponent } from './User/user-wp-view/user-wp-view.component'
     MyOrdersComponent,
     MyProfileComponent,
     MywasherOrdersComponent,
-    UserWpViewComponent
+    UserWpViewComponent,
+    UnassignedWasherViewComponent,
+    WasherWpViewComponent
   ],
   imports: [
     BrowserModule,

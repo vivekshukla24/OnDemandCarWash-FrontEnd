@@ -5,6 +5,8 @@ import { Component, OnInit } from '@angular/core';
     faPlus,
     faInfoCircle,
     faPhoneSquareAlt,
+    faQuestionCircle,
+    faBoxOpen
   } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-washer-sidebar',
@@ -17,6 +19,8 @@ export class WasherSidebarComponent implements OnInit {
   plus = faPlus;
   info = faInfoCircle;
   phone = faPhoneSquareAlt;
+  un=faQuestionCircle;
+  box=faBoxOpen;
   constructor() { }
 
   ngOnInit(): void {

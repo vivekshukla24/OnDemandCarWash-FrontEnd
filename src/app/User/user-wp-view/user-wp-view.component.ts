@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/entityServices/user-service/user.service';
 import { WashPacks } from 'src/app/models/WashPacks';
 
+
 @Component({
   selector: 'app-user-wp-view',
   templateUrl: './user-wp-view.component.html',
@@ -9,6 +10,7 @@ import { WashPacks } from 'src/app/models/WashPacks';
 })
 export class UserWpViewComponent implements OnInit {
   WPList: Array<WashPacks> = [];
+  
   constructor(private us: UserService) {}
 
   ngOnInit(): void {
