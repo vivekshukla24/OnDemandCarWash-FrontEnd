@@ -36,6 +36,7 @@ import { AllWashPackComponent } from './Admin/all-wash-pack/all-wash-pack.compon
 import { UpdateWashpackComponent } from './Admin/update-washpack/update-washpack.component';
 import { MyOrdersComponent } from './User/my-orders/my-orders.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
+import { MywasherOrdersComponent } from './Washer/mywasher-orders/mywasher-orders.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { MyProfileComponent } from './my-profile/my-profile.component';
     AllWashPackComponent,
     UpdateWashpackComponent,
     MyOrdersComponent,
-    MyProfileComponent
+    MyProfileComponent,
+    MywasherOrdersComponent
   ],
   imports: [
     BrowserModule,
