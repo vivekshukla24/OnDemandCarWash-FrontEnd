@@ -4,7 +4,7 @@ export class Order {
   orderId: string;
   useremailid: string="";
   washerName: string="";
-  washpackId: number;
+  washpack: string="";
   phoneNo: number;
   areapincode: string="";
   status: string="";
