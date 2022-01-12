@@ -18,6 +18,7 @@ export class AllWashPackComponent implements OnInit {
   ngOnInit(): void {
     this.getWP();
   }
+  //Loaded on init
   getWP() {
     this.as.getAllWP().subscribe((data) => {
       this.WPList = data;
@@ -35,6 +36,7 @@ export class AllWashPackComponent implements OnInit {
     })
   }
 
+  //To redirect to update component
   updateWP(id:string){
     this.router.navigateByUrl(`admin/updateWP/${id}`);
   }

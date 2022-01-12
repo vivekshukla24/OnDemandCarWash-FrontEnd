@@ -37,6 +37,7 @@ import { UpdateWashpackComponent } from './Admin/update-washpack/update-washpack
 import { MyOrdersComponent } from './User/my-orders/my-orders.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
 import { MywasherOrdersComponent } from './Washer/mywasher-orders/mywasher-orders.component';
+import { UserWpViewComponent } from './User/user-wp-view/user-wp-view.component';
 
 @NgModule({
   declarations: [
@@ -71,7 +72,8 @@ import { MywasherOrdersComponent } from './Washer/mywasher-orders/mywasher-order
     UpdateWashpackComponent,
     MyOrdersComponent,
     MyProfileComponent,
-    MywasherOrdersComponent
+    MywasherOrdersComponent,
+    UserWpViewComponent
   ],
   imports: [
     BrowserModule,

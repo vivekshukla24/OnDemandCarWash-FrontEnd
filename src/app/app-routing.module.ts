@@ -25,6 +25,7 @@ import { AllWashPackComponent } from './Admin/all-wash-pack/all-wash-pack.compon
 import { AddWashpackComponent } from './Admin/add-washpack/add-washpack.component';
 import { UpdateWashpackComponent } from './Admin/update-washpack/update-washpack.component';
 import { MyOrdersComponent } from './User/my-orders/my-orders.component';
+import { UserWpViewComponent } from './User/user-wp-view/user-wp-view.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -124,6 +125,11 @@ const routes: Routes = [
       {
         path: 'myorders',
         component: MyOrdersComponent,
+        canActivate: [AuthGuardService],
+      },
+      {
+        path: 'wp',
+        component: UserWpViewComponent,
         canActivate: [AuthGuardService],
       }
     ],
