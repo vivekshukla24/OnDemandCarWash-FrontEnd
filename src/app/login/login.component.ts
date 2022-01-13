@@ -41,11 +41,11 @@ export class LoginComponent implements OnInit {
         );
         
         if (data.roles[0].role === 'ADMIN') {
-          window.location.href = '/admin';
+          this.router.navigate(['/admin']);
         } else if (data.roles[0].role === 'WASHER') {
-          window.location.href = '/washer';
+          this.router.navigate(['/washer']);
         } else if (data.roles[0].role === 'USER') {
-          window.location.href = '/user';
+          this.router.navigate(['/user']);
         }
         console.log(data.roles[0].role);
       },
