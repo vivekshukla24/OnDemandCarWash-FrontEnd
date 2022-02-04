@@ -77,7 +77,8 @@ import { WasherWpViewComponent } from './Washer/washer-wp-view/washer-wp-view.co
     MywasherOrdersComponent,
     UserWpViewComponent,
     UnassignedWasherViewComponent,
-    WasherWpViewComponent
+    WasherWpViewComponent,
+
   ],
   imports: [
     BrowserModule,
